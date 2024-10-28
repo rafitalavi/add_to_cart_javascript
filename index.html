@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand display_icon" href="/"><img class="icon_size" src="./assets/icon/chili-pepper.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <div class="d-flex justify-content-center w-100">
+                    <ul class="navbar-nav me-auto flex-grow-1 justify-content-center">
+                        <li>
+                            <a class="hide_icon" aria-current="page" href="/"><img class="icon_size" src="./assets/icon/chili-pepper.png"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Rewards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Location</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Gift Card</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item display_nav_item ">
+                            <a class="nav-link " href="#" onclick="openSidebar()">
+                                <div class="cart">
+                                    <i class="cart_icon fas fa-shopping-cart "></i>
+                                <span id="cart-counter" class="badge bg-danger ">0</span>
+                                </div>
+                                
+                            </a>
+                        </li>
+                        <li class="nav-item display_nav_item">
+                            <button class="btn orden_now" type="button">Order Now</button>
+                        </li>
+                    </ul>
+                    <ul class="hide_icon navbar-nav flex-grow-1 justify-content-center ">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#" onclick="openSidebar()">
+                                <div class="cart">
+                                    <i class="cart_icon fas fa-shopping-cart"></i>
+                                <span id="cart-counter" class="badge bg-danger ">0</span>
+                                </div>
+                                
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn orden_now" type="button">Order Now</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <div id="cartSidebar" class="cart-sidebar">
+            <div class="counter_close_button_container">
+                <div class="item-counter">
+                    <p>🛍️ </p>
+                    <span id="cart-counter-sidebar">0</span>
+                    <p>Item</p>
+
+                </div>
+                <button class="close-btn" onclick="closeSidebar()">close</button>
+            </div>
+           
+           
+            <div class="secodary_cotainer_sidebar">
+                <h2>Cart</h2>
+                 <p id="empty_cart">'Your Cart Is Empty'</p>
+                <div id="cart-items"></div>
+            </div>
+          
+        </div>
+        <div class="main_container">
+            <h1 class="main_title">CHICKEN CRISPER<span>&reg;</span> COMBOS</h1>
+            <p class="menu_page_inicator"><span class="red_text">Menu</span> > Chicken Crisper<span>&reg;</span> Combos</p>
+            <p class="sub_title">Find everything from our big Mouth Burger<span>&reg;</span>, our always sizzling, Full-on Fajitas, and our famous Chicken Crisper<span>&reg;</span></p>
+            <div class="dropdown_container">
+              <button class=" menu_button">Meun ▼ </button>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div id="1" class="card card_position">
+                            <img src="./assets/images/chickerFry.jpg" class="card-img-top" alt="Chicken Fry">
+                            <div class="card-body">
+                                <h5  class="card-title">Chicken Fry</h5>
+                                <div><span class="card-price">66</span>$/each</div>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <div class="card_button_cotainer">
+                                    <a href="#" class="add_to_cart_button" onclick="addToCart('1')">Add To Cart</a>
+                                    <a href="#" class="customise_button">Customise</a>
+                                </div>
+                                <div><span class="new_text">new</span></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div id="2" class="card">
+                            <img src="./assets/images/fajitas.jpg" class="card-img-top" alt="Chicken Fry">
+                            <div class="card-body">
+                                <h5 id="product-title-2" class="card-title">Fajitas</h5>
+                                <div><span class="card-price">76</span>$/each</div>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="card_button_cotainer">
+                                    <a href="#" class="add_to_cart_button"  onclick="addToCart('2')">Add To Cart</a>
+                                    <a href="#" class="customise_button">Customise</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div id="3" class="card card_position">
+                            <img src="./assets/images/Chicken-Tikka-Masala_0-SQ.webp" class="card-img-top" alt="Chicken Fry">
+                            <div class="card-body">
+                                <h5 id="product-title-3" class="card-title">Chicken Masala</h5>
+                                <div><span class="card-price">266</span>$/each</div>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="card_button_cotainer">
+                                    <a href="#" class="add_to_cart_button" onclick="addToCart('3')">Add To Cart</a>
+                                    <a href="#" class="customise_button">Customise</a>
+                                </div>
+                                <div><span class="new_text">new</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+    <script src="cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
